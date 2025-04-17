@@ -43,7 +43,7 @@ function AnimateStars()
         let endY = startY + Math.cos(Radian) * streakLength;
 
         // Set glow properties
-        CTX.shadowColor = 'rgba(37, 0, 249, 0.7)'; // Light blue glow
+        CTX.shadowColor = 'rgba(0, 0, 255, 0.9)'; // Light blue glow
         CTX.shadowBlur = 5; // Adjust blur amount as needed
 
         // Draw the streak line
@@ -51,7 +51,7 @@ function AnimateStars()
         CTX.moveTo(startX, startY);
         CTX.lineTo(endX, endY);
         CTX.lineWidth = StarsRadius[i];
-        CTX.strokeStyle = 'rgba(245, 245, 245, 1)';
+        CTX.strokeStyle = 'rgba(245, 245, 245, 0.8)';
         CTX.stroke();
 
         // Reset glow properties
