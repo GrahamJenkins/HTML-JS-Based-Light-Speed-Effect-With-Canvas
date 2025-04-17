@@ -11,7 +11,7 @@ let StarsX = [];
 let StarsZ = [];
 let StarsRadius = [];
 let StarsAmount = 100;
-let SpeedMultiplier = 7.5;
+let SpeedMultiplier = 12;
 
 for (let i = 0; i < StarsAmount; i++)
 {
@@ -42,6 +42,10 @@ function AnimateStars()
         let endX = startX + Math.sin(Radian) * streakLength;
         let endY = startY + Math.cos(Radian) * streakLength;
 
+        // Set glow properties
+        CTX.shadowColor = 'rgba(37, 0, 249, 0.7)'; // Light blue glow
+        CTX.shadowBlur = 5; // Adjust blur amount as needed
+
         // Draw the streak line
         CTX.beginPath();
         CTX.moveTo(startX, startY);
@@ -49,6 +53,10 @@ function AnimateStars()
         CTX.lineWidth = StarsRadius[i];
         CTX.strokeStyle = 'rgba(245, 245, 245, 1)';
         CTX.stroke();
+
+        // Reset glow properties
+        CTX.shadowColor = 'transparent';
+        CTX.shadowBlur = 0;
 
         // Update star position
         StarsZ[i] += -Math.cos(Radian) * SpeedMultiplier;
